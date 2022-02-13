@@ -1,0 +1,16 @@
+.statisticsList {
+  list-style: none;
+  padding: 0;
+}
+
+.statisticsItem,
+.total,
+.percentage {
+  margin: 10px 10px 10px 35px;
+}
+
+.total,
+.percentage {
+  font-size: 18px;
+  font-weight: 500;
+}
