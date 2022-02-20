@@ -14,10 +14,12 @@ export class App extends Component {
   incrementBtn = (option) => {
      this.setState(prevState => {return { [option]: prevState[option] + 1 }})
    }
-    
+  
   countTotalFeedback = () => {
-      const sum = Object.values(this.state).reduce((total,amount) => {return total+amount},0)
-      return sum;
+    const { good, neutral, bad } = this.state;
+    const sum = good + neutral + bad;
+    
+    return sum;
     }
 
   countPositiveFeedbackPercentage = () => {
@@ -32,7 +34,7 @@ export class App extends Component {
       <div>
         <Section title="Please, leave feedback">
           <FeedbackOptions
-            options={ Object.keys(this.state) }
+            options={ ['good', 'neutral','bad'] }
             onLeaveFeedback={this.incrementBtn}
           />
         </Section>
